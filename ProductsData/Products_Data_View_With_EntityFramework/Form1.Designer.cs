@@ -46,6 +46,8 @@
             this.lblPriceUpdate = new System.Windows.Forms.Label();
             this.lblNameUpdate = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.lblSearch = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgwProducts)).BeginInit();
             this.grBxAdd.SuspendLayout();
             this.grBxUpdate.SuspendLayout();
@@ -221,11 +223,30 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // lblSearch
+            // 
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Location = new System.Drawing.Point(996, 287);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(67, 20);
+            this.lblSearch.TabIndex = 8;
+            this.lblSearch.Text = "Ürün Ara";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(1088, 280);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(158, 27);
+            this.txtSearch.TabIndex = 9;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1285, 499);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.grBxUpdate);
             this.Controls.Add(this.grBxAdd);
@@ -239,6 +260,7 @@
             this.grBxUpdate.ResumeLayout(false);
             this.grBxUpdate.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -262,5 +284,7 @@
         private Label lblPriceUpdate;
         private Label lblNameUpdate;
         private Button btnDelete;
+        private Label lblSearch;
+        private TextBox txtSearch;
     }
 }

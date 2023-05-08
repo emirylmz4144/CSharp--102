@@ -19,7 +19,7 @@ namespace Products_Data_View_With_EntityFramework
             //data grid view'in data kaynaðý productDalda List dönen getAll metodudur
             dgwProducts.DataSource = productDal.getAll();
         }
-
+       
         //Data Grid View'de bir hücreye týklayýnca ne olacak
         private void dgwProducts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -67,6 +67,21 @@ namespace Products_Data_View_With_EntityFramework
             });
             LoadProducts();
             MessageBox.Show("Ürün Silindi");
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            SearchProducts(txtSearch.Text);
+        }
+
+        
+      
+        private void SearchProducts(string key)
+        {
+            dgwProducts.DataSource = productDal
+                .getAll()
+                .Where((p) => p.Name.ToLower().Contains(key.ToLower())).ToList(); 
+          // dgwProducts.DataSource= productDal.getAllByName(key);
         }
     }
 }

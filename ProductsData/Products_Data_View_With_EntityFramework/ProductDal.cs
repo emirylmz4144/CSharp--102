@@ -18,6 +18,14 @@ namespace Products_Data_View_With_EntityFramework
             }
         }
 
+        public List<Product> getAllByName(string key)
+        {
+            using (ETradeContext context = new ETradeContext())
+            {
+                return context.Products.Where((p)=>p.Name.Contains(key)).ToList();
+            }
+        }
+
         //Database'e ürün eklemek
         public void addProduct(Product product)
         {
