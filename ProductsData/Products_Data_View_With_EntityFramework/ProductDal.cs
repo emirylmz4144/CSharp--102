@@ -22,6 +22,7 @@ namespace Products_Data_View_With_EntityFramework
         {
             using (ETradeContext context = new ETradeContext())
             {
+                //Veri tabanına erişerek veri tabanı kapanmadan önce dönen listeye filtreleme yaparve veri tabanı kapanmadan filtrelenmiş listeyi dönerr
                 return context.Products.Where((p)=>p.Name.Contains(key)).ToList();
             }
         }
